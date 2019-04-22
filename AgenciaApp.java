@@ -26,12 +26,12 @@ public class AgenciaApp{
             double orcamento = Double.parseDouble(JOptionPane.showInputDialog("Qual o orçamento do projeto?(R$)"));
             String duracao =  JOptionPane.showInputDialog("Qual a duração do projeto?");
             
-            int retorno = agencia.adicionarProjeto(codigo,orcamento,duracao,titulo);
-            if(retorno == 1)
+            boolean retorno = agencia.adicionarProjeto(codigo,orcamento,duracao,titulo);
+            if(retorno == true)
             {
                JOptionPane.showMessageDialog(null, "Projeto adicionado!");
             }
-            else if(retorno == -1 ){
+            else if(retorno == false){
                JOptionPane.showMessageDialog(null, "Não foi possível inserir projeto: já existe um projeto com esse código!");
             }
             

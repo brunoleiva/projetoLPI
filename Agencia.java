@@ -27,13 +27,13 @@ public class Agencia{
    }
    
    //método apra adicionar um projeto
-   public int adicionarProjeto(int codProjeto, double orcamento, String duracao, String titulo){
+   public boolean adicionarProjeto(int codProjeto, double orcamento, String duracao, String titulo){
       if(buscarProjeto(codProjeto) == -1){
          Projetos novoProjeto = new Projetos(codProjeto, orcamento, duracao, titulo);
          listaProjetos.add(novoProjeto);
-         return 1;
+         return true;
       }else{
-         return -1;
+         return false;
       }
    }
    
